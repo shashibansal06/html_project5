@@ -1,0 +1,309 @@
+.banner{
+	@include height-width(100vh,100%);
+	@include padding-top(70);
+	background:{
+		image:url('../images/banner-img.jpg');
+		repeat:no-repeat;
+		size:cover;
+	}
+	@media screen and (max-width:$ptablet){
+		height:auto;
+	}
+	.banner-outer{
+		display: table;
+		@include height-width(100vh,100%);
+		.banner-inner{
+			display:table-cell;
+			vertical-align: middle;
+		}
+	}
+	.banner-left{
+		width:50%;
+		@include display(middle);
+		@media screen and (max-width:$ptablet){
+			width:100%;
+		}
+		h2{
+			@include text-format(38px,$white-color,800,$family);
+			line-height: 52px;
+			@include margin-bottom(30);
+			span{
+				color:$sky-color;
+			}
+			@media screen and (max-width:$ptablet){
+				@include margin-top(40);
+				font-size:26px;
+				line-height: 30px;
+			}
+		}
+		p{
+			@include text-format(14px,$white-color,600,$family);
+			line-height: 24px;
+			@include padding-bottom(30);
+		}
+		ul{
+			li{
+				@include display(middle);
+				@include margin-right(20);
+				@media screen and (max-width:$ptablet){
+					@include margin-right(0);
+					max-width:49%;
+				}
+			}
+		}
+	}
+	.banner-right{
+		width:49%;
+		@include display(middle);
+		@media screen and (max-width:$ptablet){
+			width:100%;
+			@include margin(40 0);
+			text-align: center;
+		}
+	}
+}
+.p_about_section{
+	background-color: $grey-color;
+	.p_aboutleft{
+		float: left;
+		width:45%;
+		@media screen and (max-width:$ptablet){
+			width:100%;
+		}
+	}
+	.p_aboutright{
+		float: right;
+		width:50%;
+		@media screen and (max-width:$ptablet){
+			width:100%;
+		}
+		p{
+			@include padding-bottom(15)	;
+		}
+		.owl-theme {
+			.owl-dots {
+				text-align: left;
+				.owl-dot {
+					span{
+						@include height-width(16px,16px);
+						background-color: $transparent-color;
+						border: 1px double $transparent-color;
+						@include pos(r, null);
+						&::before{
+							background-color: $color-b7;
+						 	@include border-radius(50%);
+						 	content: "";
+						 	@include height-width(8px,8px);
+						 	@include pos(a, 3px auto auto 3px);						 	
+						}
+					}
+					&.active , &:hover{
+						span{
+							background: $white-color;
+		 					border-color:$blue-color;
+		 					&::before{
+		 						background-color: $blue-color;  
+		 					}
+						}
+					}
+					
+				}
+			}
+		}
+	}
+}
+
+.p_howwork_section{
+	background-color: $white-color;
+	.p_howwork_box{
+		.title{
+			margin-top:40px;
+			&::before{
+				content:none;
+			}
+		}
+		.p_box{
+			width:29%;
+			margin:0 2%;
+			min-height:300px;
+			@include display(top);
+			@include padding(15);
+			@include box-shadow(0,2px,6px,rgba(0,0,0,0.2));
+			@media screen and (max-width:$ptablet){
+				width:100%;
+				margin:0%;
+				min-height:0px;
+			}			
+			.p-how-icon{
+				@include margin-bottom(5);	
+				min-height:64px;
+				img{
+
+				}
+			}
+			h3{				
+				@include text-format(18px,$color-1e,600,$family);
+				@include margin-bottom(30);	
+			}
+			p{
+				@include text-format(14px,$color-3c,400,$family);
+				line-height: 24px;
+				min-height: 105px;
+			}
+		}		
+	}
+	.p_howwork_bottom{
+		@include margin-top(60);		
+	}
+}
+.p_testi_section{
+	background-color: $grey-color;
+	.p_testi_box{
+		.owl-theme {
+			.owl-dots {
+				padding: 100px 0 50px 0;
+				@media screen and (max-width:$tablet){
+					padding: 30px 0 20px 0;
+				}
+				.owl-dot {
+					span{
+						@include height-width(16px,16px);
+						background-color: $transparent-color;
+						border: 1px double $transparent-color;
+						@include pos(r, null);
+						&::before{
+							background-color: $color-b7;
+						 	@include border-radius(50%);
+						 	content: "";
+						 	@include height-width(8px,8px);
+						 	@include pos(a, 3px auto auto 3px);						 	
+						}
+					}
+					&.active , &:hover{
+						span{
+							background: $white-color;
+		 					border-color:$blue-color;
+		 					&::before{
+		 						background-color: $blue-color;  
+		 					}
+						}
+					}
+					
+				}
+			}
+		}
+		.item{
+			@include box-shadow(0,2px,6px,rgba(0,0,0,0.2));
+			.inner-testi{
+				background-color: $white-color;
+				@include padding(50 25);
+
+			}
+			p{
+				font-style:italic;
+				min-height: 175px;
+			}
+			.user-info{
+				.p-how-icon{
+					@include height-width(48px,48px);
+					float:left;
+					@include border-radius(50%);
+					overflow: hidden;
+					@include margin-right(20);
+				}
+				h3{
+					@include text-format(14px,$color-3c,600,$family);
+					@include margin-top(15);
+					display: inline-block;
+				}
+				
+			}
+		}
+	}
+}
+.p_screenshot_box{
+	width: 270px;
+	height: 550px;
+	margin:0 auto;
+	background:{
+		image: url('../images/mobile-bg.png');
+		repeat:no-repeat;
+	}
+	.owl-carousel{
+		.owl-item{
+			img{
+				margin:62px 0;
+				display:inline-block;
+				width:230px;
+			}
+		}
+		.owl-nav{
+			position: absolute;
+			top: calc(50% - 32px);
+			left:0;
+			width:100%;
+			@media screen and (max-width:$ptablet){
+				display: none;
+			}
+		}
+		.owl-nav .owl-prev , .owl-nav .owl-next{
+			background-color: transparent;
+			background-image: url("../images/left-arw.png");
+			color: transparent;
+			font-size: 0;
+			@include height-width(64px,64px);
+			background-repeat: no-repeat;
+			opacity: 1;			
+			position: relative;
+		}
+		.owl-nav .owl-prev{
+			left:-160px;
+		}
+		.owl-nav .owl-next{
+			transform: rotateY(180deg);
+			right:-160px;
+		}
+		.owl-nav .owl-prev:hover , .owl-nav .owl-next:hover{
+			background-color:transparent; 
+			background-image: url("../images/left-arw.png") !important;
+		}
+	}
+
+}
+
+
+
+
+
+
+.p_contact_section{
+	background-color: $grey-color;
+	.p_contact_box{
+		@include height-width(auto,55%);
+		@include display(top);
+		  @media screen and (max-width:$ptablet){
+		    width:80%;
+		  }
+		form{		
+			input, textarea{
+				border:1px solid $color-dd;
+				width:100%;
+				background-color: $transparent-color;
+				@include margin-bottom(35);		
+				@include padding(15 12);			
+				@include text-format(13px,$color-60,400,$family);
+				&[type="submit"]{
+					cursor:pointer;
+					background-color: $blue-color;
+					@include text-format(14px,$white-color,600,$family);
+					@include height-width(auto,180px);
+					@include border-radius(40px);
+					@include margin-top(10);		
+				}			
+			}
+			textarea{
+				height:140px;
+			}
+		}
+	}
+}

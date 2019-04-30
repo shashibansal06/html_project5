@@ -1,0 +1,139 @@
+header{
+	@include padding(38 0); 
+	@include pos(a, 0px auto auto 0);
+	@include height-width(auto,100%);
+	z-index:2;
+	@media screen and (max-width:$ptablet){
+		@include padding(10 15);
+	}
+	&.fixed-header{
+		background-color:#205278;
+		@include padding(10 0); 
+		position: fixed;
+	}
+	&.innerpagehead{
+		background-color:#205278;
+		@include padding(10 0); 
+		position: fixed;			
+	}
+	.logo{
+		@include display(middle);
+		width:25%;
+		@media screen and (max-width:$ptablet){
+			width:50%;
+		}
+	}
+	nav{
+		@include display(middle);
+		width:74%;
+		text-align:right;
+		@media screen and (max-width:$ptablet){
+			@include pos(f, 0px auto auto 0);
+			@include height-width(100vh,100%); 
+			background-color:$white-color;
+			display: none;
+		} 	
+		ul{
+			li{
+				@include display(middle);
+				@media screen and (max-width:$ptablet){
+					display: block;
+					text-align: center;
+				}
+				a{
+					@include display(middle);
+					@include text-format(14px,$white-color,500,$family);
+					@include margin-left(45);
+					@media screen and (max-width:$ptablet){
+						color:$blue-color;
+						@include margin-left(0);
+						@include margin-top(25);
+					}
+					&:hover, &.active{
+						color:$sky-color;
+					}
+					@media screen and (max-width:$mini-desktop){
+						@include margin-left(20);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.c-hamburger {   
+    @include border-radius(3px);
+    @include pos(r, 5px 0px auto auto);  	
+  	@include padding(0); 
+  	float: right;
+  	@include margin(0); 
+ 	@include height-width(36px,36px);
+ 	font-size: 0;
+ 	z-index: 9;
+ 	display: none;
+  	overflow: hidden;
+  	text-indent: -9999px;
+  	appearance: none;
+  	@include box-shadow(0,0,0,$transparent-color);
+ 	border:0px none;
+  	cursor: pointer;
+  	background: $blue-color;
+  	@media screen and (max-width:$ptablet){
+  		display: inline-block;
+  	}
+	&:focus {
+		outline: none;
+	}
+	span {		  	
+	  	@include pos(a, 16px 4px auto 4px);
+	  	display: block;
+	 	height: 4px;
+	  	background: $white-color;
+	  	&:before , &:after{
+	  		display: block;			 	
+		 	@include pos(a, auto auto auto 0px);
+		 	@include height-width(4px,100%);
+		  	background-color:$white-color;
+		  	content: "";
+	  	}
+	  	&:before{
+	  		top: -10px;
+	  	}
+	  	&:after{
+	  		bottom: -10px;
+	  	}
+	}
+	&.c-hamburger--htx{
+		span{
+			transition: background 0s 0.3s;
+			&:before , &:after{
+				transition-duration: 0.3s, 0.3s;
+				transition-delay: 0.3s, 0s;
+			}
+			&:before{
+		  		transition-property: top, transform;
+		  	}
+		  	&:after{
+		  	  	transition-property: bottom, transform;
+		  	}
+		}
+	}
+	&.is-active{
+		span{
+			background: none;
+			&:before , &:after{
+				transition-delay: 0s, 0.3s;
+			}
+			&:before{
+		  		top: 0;
+				@include rotate(45deg);
+		  	}
+		  	&:after{
+		 		bottom: 0;
+				@include rotate(-45deg);
+		  	}
+		}
+	}
+}

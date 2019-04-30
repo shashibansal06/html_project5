@@ -1,0 +1,42 @@
+footer{
+	@media screen and (max-width:$ptablet){
+		@include padding(15 0);
+	}
+	.foot-social{
+		li{
+			@media screen and (max-width:$desktop){
+				@include margin(0 10);
+			}
+			a{
+				&:hover{
+				}				
+			}
+		}
+	}
+	.foot-content{
+		@media screen and (max-width:$ptablet){
+			@include margin-top(16);
+		}
+
+		.copyright{
+			@media screen and (max-width:$ptablet){
+				font-size:12px;
+				width: 100%;
+			}			
+		}
+		.foot-link{
+			@media screen and (max-width:$ptablet){
+				width: 100%;
+			}
+			li{
+				&:before{
+					left: -8px;
+				}
+				@media screen and (max-width:$ptablet){				
+					@include margin(0 5);
+					@include padding(0 5);				
+				}
+			}
+		}
+	}
+}
